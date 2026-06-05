@@ -1,0 +1,1 @@
+compose-mode docker E2E ran successfully
