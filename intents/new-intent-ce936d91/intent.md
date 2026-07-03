@@ -42,4 +42,4 @@ DuckDB lakehouse (`demo-without-eph`) in the `main` schema, deployed via dbt.
 
 The coordinator flips this only after a successful `AskUserQuestion` response of `approved`. Do not check by inference. Design, ship, and breaking-schema-delta approvals consolidate in `design.md`.
 
-- [ ] User approved intent — `YYYY-MM-DD HH:MM` (UTC)
+- [x] User approved intent — `2026-07-03 11:44` (UTC)
