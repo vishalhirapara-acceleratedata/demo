@@ -1,0 +1,16 @@
+name: demo without eph
+slug: demo-without-eph
+destination:
+  type: duckdb
+  defaultSchema: main
+prodManifestPath: prod-manifest
+repository:
+  url: https://github.com/vishalhirapara-acceleratedata/demo.git
+  fullName: vishalhirapara-acceleratedata/demo
+  organization: vishalhirapara-acceleratedata
+  name: demo
+  installationId: 0
+  defaultBranch: main
+dataLocation:
+  dev: ./data/demo-without-eph.duckdb
+  prod: /Users/vishalh/Desktop/accelerate-data/vd-studio/data/domains/demo-without-eph/demo-without-eph.duckdb

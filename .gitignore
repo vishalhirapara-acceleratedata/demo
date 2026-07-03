@@ -1,0 +1,16 @@
+**/target/
+dbt_packages/
+logs/
+*.log
+*.pyc
+__pycache__/
+.venv/
+venv/
+.env
+.livy-session-id.txt
+.vscode/
+.idea/
+.claude/
+intent-state.json
+vd-domain.yml
+data/
