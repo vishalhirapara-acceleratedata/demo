@@ -6,7 +6,7 @@
 
 - **Grain:** `fct_revenue_monthly` — one row per calendar month.
 - **Materialization:** Staging as views; intermediate as ephemeral; mart as table.
-- **Technical approach:** dbt project targeting DuckDB (`demo-without-eph`). Seed data (`sample_orders`) is authored as a CSV in the dbt project `seeds/` directory and loaded by `dbt seed`. Models follow the 3-layer medallion pattern: staging → intermediate → mart.
+- **Technical approach:** dbt project targeting DuckDB (`demo-without-eph`). Seed data (`sample_order_lines`) is authored as a CSV in the dbt project `seeds/` directory and loaded by `dbt seed`. Models follow the 3-layer medallion pattern: staging → intermediate → mart.
 - **Key decisions:**
   - **Synthetic seed data:** No external source system; sample transactional data is authored as a dbt seed at order-line grain. This keeps the intent self-contained and reproducible.
   - **DuckDB target:** `vd-domain.yml` declares `destination.type: duckdb`; the entire pipeline runs against the local DuckDB file.
@@ -16,14 +16,14 @@
 
 | Model | Layer | Grain | Materialization | Dependencies |
 |---|---|---|---|---|
-| `sample_orders` | seed | One row per order line | seed | — |
-| `stg_sample__orders` | staging | One row per order line | view | `sample_orders` |
-| `int_order_line_revenue` | intermediate | One row per order line with computed revenue | ephemeral | `stg_sample__orders` |
+| `sample_order_lines` | seed | One row per order line | seed | — |
+| `stg_sample__order_lines` | staging | One row per order line | view | `sample_order_lines` |
+| `int_order_line_revenue` | intermediate | One row per order line with computed revenue | ephemeral | `stg_sample__order_lines` |
 | `fct_revenue_monthly` | mart | One row per calendar month | table | `int_order_line_revenue` |
 
 ## Source Mapping / Discovery
 
-- **Source system:** Synthetic seed data (`seeds/sample_orders.csv`).
+- **Source system:** Synthetic seed data (`seeds/sample_order_lines.csv`).
 - **Bronze Adequacy:** Ready — the seed data is authored alongside the dbt project, so schema and content are fully controlled. No external bronze tables to profile.
 - **Seed schema (planned):**
   - `order_line_id` (STRING) — unique order-line identifier (natural key, one row per line)
@@ -48,8 +48,8 @@ No existing artifacts impacted — fresh build target. The workspace has no prio
 | Step | Phase | Goal | Skill | Status | Evidence |
 |---|---|---|---|---|---|
 | `01-scaffold` | Build | Scaffold DuckDB dbt workspace | `scaffolding-duckdb-dbt-workspace` | working | — |
-| `02-seed` | Build | Author sample_orders seed CSV and sources.yml | `generating-dbt-model` | working | — |
-| `03-staging` | Build | Generate stg_sample__orders staging model | `generating-dbt-model` | working | — |
+| `02-seed` | Build | Author sample_order_lines seed CSV and sources.yml | `generating-dbt-model` | working | — |
+| `03-staging` | Build | Generate stg_sample__order_lines staging model | `generating-dbt-model` | working | — |
 | `04-intermediate` | Build | Generate int_order_line_revenue intermediate model | `generating-dbt-model` | working | — |
 | `05-mart` | Build | Generate fct_revenue_monthly mart model with control columns | `generating-dbt-model` | working | — |
 | `06-sandbox` | Build | Run dbt build in DuckDB sandbox | `running-dbt-in-sandbox` | working | — |
