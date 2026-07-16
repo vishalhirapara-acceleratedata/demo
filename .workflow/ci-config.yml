@@ -1,0 +1,12 @@
+VD_DOMAIN_DATA_PLATFORM: duckdb
+azure_tenant_id_var: TENANT_ID
+azure_client_id_var: SPN_CLIENT_ID
+ci_target: ephemeral_ci
+VD_DOMAIN_SLUG: check-secrate
+VD_DOMAIN_SCHEMA: main
+VD_DOMAIN_DUCKDB_PATH: /Users/vishalh/Desktop/accelerate-data/vd-studio/data/duckdb/check-secrate.duckdb
+VD_DOMAIN_DUCKDB_DATABASE: check-secrate
+prod_manifest_source:
+  mode: artifact
+  workflow: publish-prod-manifest-duckdb.yml
+  artifact_name: prod-manifest-duckdb
