@@ -1,0 +1,21 @@
+id,name,email,age,country,phone
+1,Alice Smith,alice.smith@example.com,30,USA,+10000000001
+2,Bob Johnson,bob.johnson@example.com,25,Canada,+10000000002
+3,Charlie Lee,charlie.lee@example.com,28,UK,+10000000003
+4,Diana Patel,diana.patel@example.com,32,India,+10000000004
+5,Eric Zhang,eric.zhang@example.com,27,China,+10000000005
+6,Fiona Cruz,fiona.cruz@example.com,29,Brazil,+10000000006
+7,George Kim,george.kim@example.com,31,South Korea,+10000000007
+8,Hannah Müller,hannah.muller@example.com,26,Germany,+10000000008
+9,Ivan Petrov,ivan.petrov@example.com,35,Russia,+10000000009
+10,Julia Rossi,julia.rossi@example.com,24,Italy,+100000000010
+11,Khalid Rahman,khalid.rahman@example.com,33,Saudi Arabia,+100000000011
+12,Lisa Wang,lisa.wang@example.com,28,China,+100000000012
+13,Martin Dubois,martin.dubois@example.com,27,France,+100000000013
+14,Nina Popov,nina.popov@example.com,30,Serbia,+100000000014
+15,Omar Farouk,omar.farouk@example.com,34,Egypt,+100000000015
+16,Paula Rivera,paula.rivera@example.com,29,Mexico,+1000000016
+17,Quentin Brown,quentin.brown@example.com,31,Australia,+1000000017
+18,Rachel Stern,rachel.stern@example.com,26,Israel,+1000000018
+19,Samir Omar,samir.omar@example.com,35,Turkey,+1000000019
+20,Tina Lopes,tina.lopes@example.com,24,Portugal,+1000000020
